@@ -56,6 +56,8 @@ public class Combat {
 
             scanner.nextLine();
 
+
+
             if(currentPlayer.getHealth() <= 0){
                 running = false;
             }

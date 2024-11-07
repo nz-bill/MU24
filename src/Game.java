@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Game {
 
-
+    //private InputHandler inputHandler= new InputHandler();
     private Player p1;
     private Player p2;
     private Combat combat;
@@ -12,7 +12,7 @@ public class Game {
 
         while(true){
             printMenu();
-            int input = getIntFromInput();
+            int input = InputHandler.getIntInRange(0,1);
 
             if (input == 0){
                 break;
@@ -34,17 +34,5 @@ public class Game {
 
     }
 
-    public int getIntFromInput(){
-        Scanner scanner = new Scanner(System.in);
 
-        while(!scanner.hasNextInt()){
-            System.out.println("skriv ett heltal");
-            scanner.nextLine();
-        }
-
-        int i = scanner.nextInt();
-        scanner.nextLine();
-        return i;
-
-    }
 }
