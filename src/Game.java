@@ -17,6 +17,7 @@ public class Game {
             if (input == 0){
                 break;
             }
+            //dghfgh
 
             if (input == 1){
 
@@ -28,7 +29,10 @@ public class Game {
     }
 
     public void printMenu(){
-        System.out.println("tjenare!");
+
+        System.out.println("-----Meny------");
+
+   
         System.out.println("vad vill du göra?");
         System.out.println("1. slåss");
         System.out.println("0. avsluta");
