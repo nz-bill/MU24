@@ -29,6 +29,7 @@ public class Game {
     }
 
     public void printMenu(){
+        System.out.println("-----Meny------");
         System.out.println("vad vill du göra?");
         System.out.println("1. slåss");
         System.out.println("0. avsluta");
