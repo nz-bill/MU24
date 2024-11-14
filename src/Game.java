@@ -1,7 +1,11 @@
+import enemies.*;
+
+import items.*;
+import utility.*;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Game {
 
@@ -34,6 +38,11 @@ public class Game {
                 System.out.println("hej då");
                 running = false;
             }
+
+            if(player.getHealth() <= 0){
+                running = gameOver();;
+
+            }
         }
 
     }
@@ -44,6 +53,16 @@ public class Game {
         Enemy enemy = enemyList.get(i);
 
         new Combat(this.player,enemy);
+    }
+
+    public boolean gameOver(){
+        System.out.println("GAME OVER!");
+        System.out.println("du dog..");
+        System.out.println("vill du spela igen?");
+        boolean choice = InputHandler.getTrueFalse();
+        player.resetHealth();
+
+        return choice;
     }
 
 
@@ -69,19 +88,19 @@ public class Game {
     }
 
     public void initEnemyList(){
-        enemyList.add(new Goblin(50,"Goblin A", itemList.get(0)));
-        enemyList.add(new Goblin(70,"Goblin B", itemList.get(1)));
-        enemyList.add(new GoblinArcher(50,"Goblin Archer A", itemList.get(2)));
-        enemyList.add(new GoblinArcher(50,"Goblin Archer B", itemList.get(3)));
-        enemyList.add(new GoblinAssassin(50,"Goblin Assassin", itemList.get(4)));
+        enemyList.add(new Goblin(50,"enemies.Goblin A", itemList.get(0)));
+        enemyList.add(new Goblin(70,"enemies.Goblin B", itemList.get(1)));
+        enemyList.add(new GoblinArcher(50,"enemies.Goblin Archer A", itemList.get(2)));
+        enemyList.add(new GoblinArcher(50,"enemies.Goblin Archer B", itemList.get(3)));
+        enemyList.add(new GoblinAssassin(50,"enemies.Goblin Assassin", itemList.get(4)));
 
     }
 
     public void initItemList(){
         itemList.add(new MeleeWeapon("dagger", 10));
         itemList.add(new MeleeWeapon("Sword", 20));
-        itemList.add(new RangedWeapon("Short Bow", 10));
-        itemList.add(new RangedWeapon("crossbow", 18));
+        itemList.add(new RangedWeapon("Short Bow", 25));
+        itemList.add(new RangedWeapon("crossbow", 50));
         itemList.add(new UtilityItem("Health Potion", 25));
     }
 }

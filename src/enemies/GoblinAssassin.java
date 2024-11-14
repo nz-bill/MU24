@@ -1,4 +1,10 @@
-public class GoblinAssassin extends Enemy implements MeleeUnit, RangedUnit{
+package enemies;
+
+import enemies.Character;
+import enemies.Enemy;
+import items.Item;
+
+public class GoblinAssassin extends Enemy implements MeleeUnit, RangedUnit {
 
     private double range;
     public GoblinAssassin(int health, String name, Item loot) {

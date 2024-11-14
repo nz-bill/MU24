@@ -1,3 +1,6 @@
+package items;
+import enemies.Character;
+
 public abstract class Item {
 
     private String name;
@@ -8,8 +11,19 @@ public abstract class Item {
 
     @Override
     public String toString() {
-        return "Item{" +
+        return "items.Item{" +
                 "name='" + name + '\'' +
                 '}';
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public abstract void useItem(Character target);
+
+    public abstract Item getCopy();
+
+
+
 }

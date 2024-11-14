@@ -1,3 +1,7 @@
+package enemies;
+
+import enemies.Character;
+
 public interface MeleeUnit {
 
 

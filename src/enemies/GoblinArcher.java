@@ -1,4 +1,10 @@
-public class GoblinArcher extends Enemy implements RangedUnit{
+package enemies;
+
+import enemies.Character;
+import enemies.Enemy;
+import items.Item;
+
+public class GoblinArcher extends Enemy implements RangedUnit {
 
 
     private double range;

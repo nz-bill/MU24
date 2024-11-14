@@ -1,3 +1,5 @@
+package utility;
+
 import java.util.Scanner;
 
 public class InputHandler {
@@ -20,6 +22,23 @@ public class InputHandler {
             }
             System.out.println("skriv ett tal " + min + "-" +max);
             scanner.nextLine();
+        }
+    }
+
+    public static boolean getTrueFalse(){
+
+        while(true){
+            String input = scanner.nextLine();
+
+            if(input.toLowerCase().startsWith("j") || input.toLowerCase().startsWith("y")){
+                return true;
+            }
+
+            if (input.toLowerCase().startsWith("n")){
+                return false;
+            }
+
+            System.out.println("svara med 'ja' eller 'nej'");
         }
     }
 

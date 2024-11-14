@@ -1,3 +1,8 @@
+import enemies.Character;
+import enemies.Enemy;
+import enemies.Player;
+import utility.InputHandler;
+
 import java.util.Random;
 
 public class Combat {
@@ -34,6 +39,19 @@ public class Combat {
 
 
 
+            if(!checkHealth(player)){
+                player.died();
+                break;
+            }
+
+            if(!checkHealth(enemy)){
+                enemy.died();
+                findLoot();
+                break;
+            }
+
+
+
             if (currentCharacter instanceof Player){
                 currentCharacter = this.enemy;
                 otherCharacter = this.player;
@@ -43,6 +61,26 @@ public class Combat {
             }
         }
 
+
+        this.enemy.resetHealth();
+
+    }
+
+    private boolean checkHealth(Character character) {
+
+
+        if (character.getHealth() <= 0){
+            return false;
+        } else return true;
+
+    }
+
+    public void findLoot(){
+        System.out.println( "du hittar en " + enemy.getLoot().getName());
+        System.out.println("vill du plocka upp den?");
+        if(InputHandler.getTrueFalse()){
+            player.getInventory().add(enemy.getLoot().getCopy());
+        }
     }
 
     public void presentCombatants(){

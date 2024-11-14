@@ -1,3 +1,7 @@
+package enemies;
+
+import items.Item;
+
 import java.util.Random;
 
 public abstract class Enemy extends Character {
@@ -16,6 +20,10 @@ public abstract class Enemy extends Character {
         int variance = rng.nextInt(-2,+3);
         target.takeDamage(5+variance);
         return true;
+    }
+
+    public Item getLoot(){
+        return loot;
     }
 
     @Override
