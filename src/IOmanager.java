@@ -26,7 +26,11 @@ public class IOmanager {
             FileOutputStream fileOutputStream = new FileOutputStream(fileName);
             fileOutputStream.write(textContent.getBytes());
             System.out.println("text skrevs till fil");
+
+
+            //stäng strömmen när vi är klara för att frigöra resurser och undvika minnesläckor
             fileOutputStream.close();
+
         } catch (IOException e) {
             System.out.println("nåt gick snett...");
         }
@@ -42,6 +46,7 @@ public class IOmanager {
             while((content = fileInputStream.read()) != -1 ){
                 System.out.print((char) content);
             }
+
             fileInputStream.close();
 
         } catch (IOException e){
@@ -56,8 +61,10 @@ public class IOmanager {
             FileWriter fileWriter = new FileWriter(fileName);
 
             fileWriter.write(textContent);
-            fileWriter.close();
+
             System.out.println("text written to file");
+
+            fileWriter.close();
 
         } catch (IOException e){
             System.out.println("nåt gick fel..");
@@ -71,6 +78,7 @@ public class IOmanager {
             while((content = fileReader.read()) != -1 ){
                 System.out.print((char) content);
             }
+
             fileReader.close();
 
         } catch (IOException e) {
@@ -91,6 +99,7 @@ public class IOmanager {
             printWriter.println(textContent);
             printWriter.println(textContent);
             printWriter.println(textContent);
+
             printWriter.close();
 
             System.out.println("text sparad");
@@ -112,6 +121,7 @@ public class IOmanager {
             }
 
             System.out.println(s);
+
             scanner.close();
 
         } catch (IOException e) {
@@ -129,6 +139,7 @@ public class IOmanager {
 
 
             System.out.println("text sparad");
+
             bufferedWriter.close();
 
 
@@ -150,6 +161,7 @@ public class IOmanager {
             }
 
             bufferedReader.close();
+
         } catch (IOException e){
             System.out.println("nåt gick fel");
         }
