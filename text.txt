@@ -1,0 +1,1 @@
+Detta är innehållet som vi vill ska hamna i en textfil
